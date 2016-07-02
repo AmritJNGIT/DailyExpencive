@@ -1,0 +1,91 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jquery-2.2.2.js"></script>
+   
+    <link href="~/Content/Css/style.css" rel="stylesheet" />
+
+    
+    
+
+</head>
+
+<body ng-app="Myapp">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#428bca !important">
+            <div class="container">
+                <div class="row col-lg-12">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+
+                            <li> @Html.ActionLink("Home |", "Index", "Home", null, new { @class = "manufont" })</li>
+                            @*<li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">&nbsp;Account</a>
+                                <ul class="dropdown-menu">
+                                    
+                                    <li style="background-color:aqua"> @Html.ActionLink("View Account", "Index", "AccountType", null, null)</li>
+
+                                </ul>
+                            </li>*@
+                            <li > @Html.ActionLink("Account |", "AccountDetailType", "AccountType", null, null)</li>
+                            <li> @Html.ActionLink("Catagory |", "Catagory", "Catagory", null, null)</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </nav>
+        <div class="">
+            <div id="dialog" style="display: none">
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            @RenderBody()
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <footer>
+                <center><p>&copy; @DateTime.Now.Year - jnG IT Solution</p></center>
+            </footer>
+        </div>
+
+</html>
+
+

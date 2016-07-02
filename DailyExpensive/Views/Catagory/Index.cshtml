@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainMasterLayout.cshtml";
+}
+
+<center><h2>Catagory</h2></center>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-route.js"></script>
+<script src="~/Scripts/apps/module.js"></script>
+<script src="~/Scripts/apps/CatagoryViewController.js"></script>
+<script src="~/Scripts/apps/CatagoryViewService.js"></script>
+
+<link href="~/Content/Css/font-awesome.min.css" rel="stylesheet" />
+
+<div ng-controller="CatagoryViewCrtl">
+    <div class="container">
+        <div class="row text-left">
+            <div class="col-lg-12">
+                <div class="table-responsive ">
+                    <table class="table table-bordered small admin-grid" id="table">
+                        <tr class="info">
+                            <th style="background-color: #428bca">Catagory Name</th>
+                            <th style="background-color: #428bca">Edit</th>
+                            <th style="background-color: #428bca">Delete</th>
+                            @*<th>Details</th>*@
+
+                        </tr>
+                        
+                        <tr data-ng-repeat="CatagoryView in CatagoryviewListtSend">
+                            <input type="hidden" value="{{CatagoryView.Id}}" />
+                            <td><img ng-src="{{CatagoryView.CatagoryImage}}" style="width: {{width}}px; height: {{height}}px" />  {{CatagoryView.Name}}</td>
+                            <td><span class="btn" ng-click="EditCatagory(CatagoryView.Id)"><img src="~/Content/Image/Text Edit.png" /></span></td>
+                            <td><span class="btn " ng-click="DeleteCatagory(CatagoryView.Id)"><img src="~/Content/Image/Delete.png" /></span></td>
+                           
+
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div style="color:white" class="pull-left">
+            <a href="/Catagory/Catagory">
+                <img src="~/Content/Image/goback-Icon.png">
+            </a>
+
+        </div>
+        </div>
+        
+    </div>
+
+

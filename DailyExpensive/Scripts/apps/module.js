@@ -1,0 +1,1 @@
+﻿var app = angular.module("Myapp", ['ngRoute']).constant('DomainPath', window.location.origin + '/')

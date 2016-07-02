@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainMasterLayout.cshtml";
+}
+<center><h2>Account</h2></center>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-route.js"></script>
+<script src="~/Scripts/apps/module.js"></script>
+<script src="~/Scripts/apps/AccountDetailController.js"></script>
+<script src="~/Scripts/apps/AccountDetailService.js"></script>
+
+<link href="~/Content/Css/font-awesome.min.css" rel="stylesheet" />
+
+<div ng-controller="AccontDetailCrtl">
+    <div class="container">
+        <div class="row text-left">
+            <div class="col-lg-12">
+                <div class="table-responsive ">
+                    <table class="table table-bordered small admin-grid" id="table">
+                        <tr class="info">
+                            <th style="background-color: #428bca">Amount</th>
+
+                            <th style="background-color: #428bca">Amount Type</th>
+                            <th style="background-color: #428bca">Delete</th>
+                            @*<th>Details</th>*@
+
+                        </tr>
+                        <tr data-ng-repeat="AccountDetail in AccountDetailListtSend">
+                            <input type="hidden" value="{{AccountDetail.Id}}" />
+                            <td> {{AccountDetail.Amount}}  <img src="~/Content/Image/images.jpg" /></td>
+
+                            <td><img ng-src="{{AccountDetail.AmountTypeImage}}" style="width: {{width}}px; height: {{height}}px" />  {{AccountDetail.AmountType}}</td>
+                            <td><span class="btn " ng-click="DeleteAccount(AccountDetail.Id)"><img src="~/Content/Image/Delete.png" /></span></td>
+
+
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div style="color:white" class="pull-left">
+            <a href="/AccountType/AccountDetailType">
+                <img src="~/Content/Image/goback-Icon.png">
+            </a>
+
+        </div>
+        </div>
+        
+    </div>

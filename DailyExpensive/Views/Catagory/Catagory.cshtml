@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Catagory";
+    Layout = "~/Views/Shared/_MainMasterLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-2.2.2.js"></script>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-route.js"></script>
+<script src="~/Scripts/apps/module.js"></script>
+<script src="~/Scripts/apps/CatagoryController.js"></script>
+<script src="~/Scripts/apps/CatagoryService.js"></script>
+
+<div ng-controller="CatagoryCtrl">
+    <section>
+        <div class="container">
+            <div class="col-lg-4">
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Account
+                    </div>
+                    <div class="panel-body">
+                        <input type="hidden" ng-model="Catagoryid" />
+                        <div class="row">
+                            <form novalidate name="CatagoryForm" ng-submit="CatagorySubmit()">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-6">
+                                        <label>Catagory Name</label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="text" ng-model="Name" placeholder="Catagory Name" name="CName" class="form-control" ng-class="Submitted?'ng-dirty':''" required autofocus />
+                                        <span ng-show="CatagoryForm.CName.$dirty && CatagoryForm.CName.$error.required" style="color:red">Name is required</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-12 space-top">
+                                    <div class="col-lg-6">
+                                        <label>Catagory Icon</label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="file" name="files" accept="image/*" onchange="angular.element(this).scope().selectAddCatagoryImage(this.files)" required />
+
+                                        <span class="error">{{FileInvalidMessage}}</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 space-top text-center">
+                                    <input type="submit" value="Save" class="btn btn-success" />
+                                </div>
+                                <div class="col-lg-12 space-top text-center pull-left ">
+                                    <a href="/Catagory/Index">
+                                        <img src="~/Content/Image/forward.png" alt="" title="View Catagory">
+                                    </a>
+
+                                </div><div style="color:red"> {{Message}}</div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+
